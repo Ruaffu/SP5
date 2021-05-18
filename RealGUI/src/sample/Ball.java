@@ -1,32 +1,22 @@
 package sample;
 
-import javafx.animation.Animation;
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
-import javafx.geometry.Bounds;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
-import javafx.util.Duration;
 
 import java.util.Random;
 
-import static sample.Constants.*;
-
-public class Ball extends ImageViewGameObj{
+public class Ball extends ImageViewAssets {
     int dy;
     int dx;
 
-    public Ball(Pane root)
+    public Ball(Pane root, String url)
     {
-        super(root, Main.ballSkinsURL.get(0));
+        super(root, url);
         dx = 0;
         dy = 0;
 
     }
 
-    /**
-     * Moves the ball according to it's velocity without any bouncing.
-     */
+      //Moves the ball.
     public void move() {
         this.setY(this.getY() + this.getDy());
         this.setX(this.getX() + this.getDx());
@@ -34,9 +24,16 @@ public class Ball extends ImageViewGameObj{
 
     public static int randInRange(int min, int max) {
         Random r = new Random();
-        return r.ints(min, (max + 1)).findFirst().getAsInt();
-    }
+        int rand;
+        rand = r.ints(min, (max + 1)).findFirst().getAsInt();
+        if (rand == 0)
+        {
+            return rand+1;
+        }else {
+            return rand;
+        }
 
+    }
 
     // returns the centre x point of the ball
     public double getX()

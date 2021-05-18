@@ -2,19 +2,19 @@
     -fx-background-image: url("Images/BrickSlayerBackground.png");
 }
 
+.myDialog{
+    -fx-background-image: url("Images/BrickSlayerBackground.png");
+}
+
+.myDialog:header *.header-panel{
+    -fx-background-image: url("Images/BrickSlayerBackground.png");
+}
+
 .label{
     -fx-font-size: 20;
     -fx-font-family: "lucida Console";
     -fx-text-fill: "white";
     -fx-alignment: center;
-}
-
-#numberOfCoins
-{
-    -fx-font-size: 20;
-    -fx-font-family: "lucida Console";
-    -fx-text-fill: "white";
-    -fx-alignment: right;
 }
 
 #currencyLabel
